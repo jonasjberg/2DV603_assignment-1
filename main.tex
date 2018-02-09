@@ -1,0 +1,125 @@
+% ______________________________________________________________________________
+%
+%   2DV603 Software Engineering
+%   Assignment 1 --- Requirements Engineering
+%
+%   Author:  Jonas Sjöberg
+%            Linnaeus University
+%            js224eh@student.lnu.se
+%            github.com/jonasjberg
+%            www.jonasjberg.com
+%
+%  License:  Creative Commons Attribution 4.0 International (CC BY 4.0)
+%            <http://creativecommons.org/licenses/by/4.0/legalcode>
+%            See LICENSE.md for additional licensing information.
+% ______________________________________________________________________________
+
+
+\documentclass[11pt,a4paper]{article}
+
+
+\usepackage[utf8]{inputenc}
+\inputencoding{utf8}
+\usepackage[swedish,english]{babel}
+\usepackage[swedish]{isodate}
+\usepackage[T1]{fontenc}
+
+\usepackage{lmodern}
+\usepackage{fullpage}
+
+\usepackage{csquotes}
+\usepackage[natbib=true,
+            style=ieee,
+            backend=biber]{biblatex}
+\addbibresource{refs.bib}
+
+\usepackage[binary-units=true]{siunitx}
+\usepackage{float}
+\usepackage{textcomp}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+
+
+\usepackage[pdfusetitle,
+            bookmarks=true,
+            bookmarksnumbered=true,
+            bookmarksopen=false,
+            breaklinks=false,
+            pdfborder={0 0 0},
+            backref=false,
+            colorlinks=false,
+            hidelinks]{hyperref}
+
+\usepackage{minted}
+\usemintedstyle{bw}
+
+\usepackage{verbatim}
+\usepackage{fancyvrb}
+\usepackage{listings}
+
+\renewcommand\listingscaption{Listing}
+\renewcommand\listoflistingscaption{List of listings}
+
+\usepackage{booktabs}
+\usepackage{longtable}
+
+\usepackage{pdfpages}
+
+
+\title{\textsc{2DV603} \\
+       Software Engineering \\
+       Assignment 1 --- Requirements Engineering
+}
+
+\author{
+  Jonas Sjöberg                          \\
+  860224-xxxx                            \\
+  Linnaeus University                    \\
+  \texttt{js224eh@student.lnu.se}        \\
+  \texttt{https://github.com/jonasjberg} \\
+  \texttt{http://www.jonasjberg.com}
+}
+
+\date{}
+
+\begin{document}
+  \maketitle
+
+  \begin{center}
+    \begin{tabular}{l r}
+      Written during:      & \isodate\printdate{2018-02-07} -- \isodate\printdate{2018-02-11} \\
+      Teacher responsible: & Mauro Caporuscio \\
+                           & Diego Perez \\
+    \end{tabular}
+  \end{center}
+
+  \begin{abstract}
+    The first assignment in the course \emph{2DV603 --- Software Engineering}
+    at Linnaeus University during the spring term of 2018.
+    The goal of this assignment is to create a system to manage front-desk
+    activities of a fictional hotel, following a given scenario.
+    %
+    % TODO: ...
+    %
+  \end{abstract}
+
+  \clearpage
+  \setcounter{tocdepth}{3}
+  \tableofcontents
+
+  \bigskip
+
+  %\listoffigures
+  %\listoftables
+  %\listoflistings
+
+  \input{domain_analysis.tex}
+  \input{requirements.tex}
+  \input{time_log.tex}
+
+  \addcontentsline{toc}{section}{References}
+  \printbibliography{}
+
+\end{document}
