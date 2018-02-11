@@ -1,41 +1,38 @@
-## Initial Observations
-Initial assumptions about the domain are based on the description and
-information given in the assignment instructions.
-
 
 * Apparent main uses of the system:
-  * Add, retrieve, modify room reservations
-  * Add, retrieve, modify guest information
-  * ``Real-time'' information provider when staff interact with guests
-  * Respond to queries for vacant rooms
 
-* Characteristics of Hotel Rooms
+    * Add, retrieve, modify room reservations
+    * Add, retrieve, modify guest information
+    * Provide information in "real-time" when staff interact with guests
+    * Respond to queries for vacant rooms
 
-  * Uniquely identified by the room number
-  * Always either occupied or vacant at a specific point in time
-  * Mutually exclusive smoking or non-smoking
-  * Some adjoin other with internal doors between them
-  * ``Attractiveness'' (room with a view, room size, etc.) is summarized with a quality level 
-  * Contains a fixed number of beds with specific sizes
-  * Priced based on quality level (attractiveness)
-    * Quality levels determine max daily rate
+* Notable characteristics of Hotel Rooms
 
-* Reservations:
+    * Uniquely identified by the room number
+    * Always either occupied or vacant at a specific point in time
+    * Mutually exclusive smoking or non-smoking
+    * Some adjoin other with internal doors between them
+    * "Attractiveness" (room with a view, room size, etc.) is summarized with a quality level 
+        * Priced based on quality level (attractiveness)
+        * Quality levels determine max daily rate
+    * Contains a fixed number of beds with specific sizes
 
-  * Always involve rooms
-  * Spans a period of time
+* Notable characteristics of Reservations:
 
-* Data Storage:
+    * Always involve rooms
+    * Spans a period of time
 
-  * `CRUD` database
-  * Provides interface to front end systems
-  * Store basic information about guests 
-      * name
-      * address
-      * telephone number
-      * credit card (security requirements)
-      * passport number (security requirements)
-  * Store payment data
-    * Query for relevant data for billing guests
-  * Must not be insanely slow --- probably not an issue in practice
+* Notes on the Data Storage:
 
+    * `CRUD` database
+        * Store basic information about guests 
+            * Name
+            * Address
+            * Telephone number
+            * Credit card (security requirements)
+            * Passport number (security requirements)
+        * Store payment data
+
+    * Provides interface to front end systems
+        * Query for relevant data for billing guests
+    * Must not be insanely slow --- probably not an issue in practice

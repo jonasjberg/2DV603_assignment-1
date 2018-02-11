@@ -79,82 +79,111 @@ as data exporting.
 
 
 \subsection{Hotel Reservations Domain Analysis}
-%
-% TODO: Perform domain analysis about "hotel reservations"..
-% This will help resolve certain ambiguities in the requirements statement.
-%
 
 \subsubsection{Initial Observations}
 Initial assumptions about the domain are based on the description and
 information given in the assignment instructions.
 
 
-Apparent main uses of the system:
+%%% PASTE START %%%
+\begin{itemize}
+\item
+  Apparent main uses of the system:
 
-\begin{enumerate}
-  \item Add, retrieve, modify room reservations
-  \item Add, retrieve, modify guest information
-  \item ``Real-time'' information provider when staff interact with guests
-\end{enumerate}
+  \begin{itemize}
+  \tightlist
+  \item
+    Add, retrieve, modify room reservations (Scenario~\ref{scenario1})
+  \item
+    Add, retrieve, modify guest information (Scenario~\ref{scenario1})
+  \item
+      Provide information in ``real-time'' when staff interact with guests (Scenario~\ref{scenario2})
+  \item
+    Respond to queries for vacant rooms (Scenario~\ref{scenario1})
+  \end{itemize}
+\item
+  Notable characteristics of Hotel Rooms
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Uniquely identified by the room number
+  \item
+    Always either occupied or vacant at a specific point in time
+  \item
+    Mutually exclusive smoking or non-smoking
+  \item
+    Some adjoin other with internal doors between them
+  \item
+    ``Attractiveness'' (room with a view, room size, etc.) is summarized
+    with a quality level
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Priced based on quality level (attractiveness)
+    \item
+      Quality levels determine max daily rate
+    \end{itemize}
+  \item
+    Contains a fixed number of beds with specific sizes
+  \end{itemize}
+\item
+  Notable characteristics of Reservations:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Always involve rooms
+  \item
+    Spans a period of time
+  \end{itemize}
+\item
+  Notes on the Data Storage:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{CRUD} database
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Store basic information about guests
+
+      \begin{itemize}
+      \tightlist
+      \item
+        Name
+      \item
+        Address
+      \item
+        Telephone number
+      \item
+        Credit card (security requirements)
+      \item
+        Passport number (security requirements)
+      \end{itemize}
+    \item
+      Store payment data
+    \end{itemize}
+  \item
+    Provides interface to front end systems
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Query for relevant data for billing guests
+    \end{itemize}
+  \item
+    Must not be insanely slow --- probably not an issue in practice
+  \end{itemize}
+\end{itemize}
+%%% PASTE END %%%
 
 
 
-Characteristics of Hotel Rooms:
-
-\begin{enumerate}
-\item Uniquely identified by the room number
-\item Smoking/non-smoking
-\item Some adjoin other with internal doors between them
-\item ``Attractiveness'' (room with a view, room size, etc.) is summarized with a quality level 
-\item Contains a fixed number of beds with specific sizes
-\item Priced based on quality level (attractiveness)
-  \item each quality level has a max daily rate
-  \item guests can be up to the max amount
-\end{enumerate}
-
-Reservations:
-
-* Deals with specific rooms (availability, requirements)
-
-
-Data Storage:
-
-* record basic information about each guest, 
-    * name, address, telephone number, credit card, passport number
-
-
-Scenario:
-
-* guest wishes to make a reservation:
-
-  clerk asks about:
-      * stay which nights?
-      * which type of room do they want?
-
-  System must:
-
-    * verify if room(s) are available on those nights before allowing a reservation to be made
-    * verification procedure must take less than 2 seconds to complete.
-    * allow requests for specific rooms, controlled by the manage
-
-* overall guests
-
-  system must:
-    * record basic information about each guest, 
-        * name, address, telephone number, credit card, passport number
-    * keep track of the guests account
-    * print guests bill.
-
-* guest wishes to cancel a reservation:
-
-    * reservation can be canceled at any time but a percentage of the room
-      price may be charged if the cancelation is done too late
-
-* guest checks in
-
-    * room is allocated until checkout
-    * must take in average less than 60 seconds to complete
-
+\subsubsection{Conclusions}
 Also, we might assume that the very central core of the system will not be very
 complicated. It is purely data storage, retrieval and update (``CRUD'').
 

@@ -36,7 +36,11 @@ command -v latexmk >/dev/null || exit 1
   # Create include directory if missing
   [ -d './include' ] || mkdir 'include'
 
+
+  pandoc -f markdown -t latex -o domain_summary.md.tex domain_summary.md
+
   # Always run at least twice for good measure
   latexmk main.tex -outdir=build -pdf -pdflatex='pdflatex -synctex=1 -interaction=nonstopmode -shell-escape'
   latexmk main.tex -outdir=build -pdf -pdflatex='pdflatex -synctex=1 -interaction=nonstopmode -shell-escape'
+
 )

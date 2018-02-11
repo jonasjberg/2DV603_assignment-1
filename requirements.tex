@@ -33,7 +33,7 @@ Task description from the assignment instructions
 %
 % TODO: Write scenarios..
 %
-\subsubsection{Potential guest inquires about future patronage}{
+\subsubsection{Potential guest inquires about future patronage}\label{scenario1}
 %
 % clerk asks about:
 %     * stay which nights?
@@ -45,7 +45,7 @@ Task description from the assignment instructions
 %   * verification procedure must take less than 2 seconds to complete.
 %   * allow requests for specific rooms, controlled by the manage
 %
-\begin{itemize}\label{scenario1}
+\begin{itemize}
   \item A travelling salesman needs somewhere to stay for one night a couple of
     weeks from now.  This person contacts the hotel by phone to inquire about
     vacancy over a couple of days.  
@@ -63,7 +63,8 @@ Task description from the assignment instructions
     for one of the vacant rooms. 
 \begin{end}
 
-\subsubsection{Guest checks in at the hotel}{
+
+\subsubsection{Guest checks in at the hotel}\label{scenario2}
 % 
 % * guest checks in
 % 
@@ -77,22 +78,41 @@ Task description from the assignment instructions
   \item The receptionist scrambles to find which room number the guest
     ostensibly has reserved. The receptionist asks the salesman for personal information used when making the reservation.
 
-  \item The salesman provides personal information, such as name, for the receptionist who enters
-    this into the management system.
+  \item The salesman provides personal information to the receptionist.
+      
+  \item The receptionist enters the information into the management system.
     After narrowing down the search results to a single number, the
-    receptionist can retrieve the room key and proceed to guide the guest to
-    his room.
+    receptionist can retrieve the room key and proceed to guide the guest
+    to his room.
 
-    system to find out if any rooms are available in the requested time frame.
-    The hotel employee relays information about which rooms are available.
+  \item The salesman is provided with his room key and instructions on where
+      the room is located.
+\begin{end}
 
-  \item After hearing about the rooms, the salesman asks about room sizes.
 
-  \item The employee looks up relevant characteristics and attributes and
-    relays the information.
+\subsubsection{Guest cancels a reservation}\label{scenario3}
+% 
+% * guest wishes to cancel a reservation:
+% 
+%     * reservation can be canceled at any time but a percentage of the room
+%       price may be charged if the cancelation is done too late
+% 
+\begin{itemize}\label{scenario1}
+  \item A cat named Gibson wishes to cancel a reservation due to feline matters.
+    Gibson logs in to the hotel website using a identifier and access key that
+        was provided to him when the room was first reserved.
 
-  \item After brief contemplation, the salesman decides to make a reservation
-    for one of the vacant rooms. 
+  \item The web portal loads in under 2 seconds, which is considered good
+      enough for a modern website. Gibson cries in cat but acknowledges that
+        everything is really slow now and the hotel web portal is comparably
+        performant.
+
+  \item After clicking on clearly visible ``cancel reservation'' link, a
+      message informs Gibson about the cancellation fee, calculated from the
+        room price and time delta from planned residence and cancellation.
+      
+  \item Gibson sighs in cat and clicks the ``I Agree'' link, which leads to a
+      confirmation page with a summary of upayments that will be billed.
 \begin{end}
 
 
@@ -105,15 +125,6 @@ Task description from the assignment instructions
     * keep track of the guests account
     * print guests bill.
 
-* guest wishes to cancel a reservation:
-
-    * reservation can be canceled at any time but a percentage of the room
-      price may be charged if the cancelation is done too late
-
-* guest checks in
-
-    * room is allocated until checkout
-    * must take in average less than 60 seconds to complete
 
 
 \subsection{Use Cases}
