@@ -118,15 +118,18 @@ These three scenarios are derived from the assignment instructions. \cite{2dv603
 
 
 \subsection{Use Cases}
-%
-%
-% TODO: Derive uses cases..
-%
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\linewidth]{include/uml-use-case-1.eps}
+  \caption{UML Use Case Diagram for use case 1 -- Add a Book}
+  \label{fig:uml-usecase1}
+\end{figure}
 %%% USECASES_START %%%
 
-\subsubsection{Find Vacant Rooms}\label{find-vacant-rooms}
+\subsubsection{Usecase --- Find Vacant Rooms}\label{usecase1}
 
-\paragraph{Actors}\label{actors}
+\paragraph{Actors}
 
 \begin{itemize}
 \tightlist
@@ -136,7 +139,7 @@ These three scenarios are derived from the assignment instructions. \cite{2dv603
   Customer --- inquires about vacant rooms at a specific date
 \end{itemize}
 
-\paragraph{Goals}\label{goals}
+\paragraph{Goals}
 
 \begin{itemize}
 \tightlist
@@ -146,7 +149,7 @@ These three scenarios are derived from the assignment instructions. \cite{2dv603
   Respond to the customers inquiry
 \end{itemize}
 
-\paragraph{Preconditions}\label{preconditions}
+\paragraph{Preconditions}
 
 \begin{itemize}
 \tightlist
@@ -156,20 +159,20 @@ These three scenarios are derived from the assignment instructions. \cite{2dv603
   The employee is authorized to access information on room availability
 \end{itemize}
 
-\paragraph{Summary}\label{summary}
+\paragraph{Summary}
 
 Demonstrates real-time use of the system to answer questions during
 interaction with a customer.
 
-\paragraph{Related}\label{related}
+\paragraph{Related}
 This use case is extracted from Scenario~\ref{scenario1}.
 
-\paragraph{Entry Conditions}\label{entry-conditions}
+\paragraph{Entry Conditions}
 
 The employee wants to get information to provide to a customer during an
 interaction.
 
-\paragraph{Steps}\label{steps}
+\paragraph{Steps}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -184,15 +187,14 @@ interaction.
   Repeat steps 2--3 until all customer inquiries are resolved
 \end{enumerate}
 
-\paragraph{Exit Condition}\label{exit-condition}
+\paragraph{Exit Condition}
 
 The employee can answer the customers requests through information
 provided by the system.
 
-\subsubsection{Find Vacant non-smoking
-Rooms}\label{find-vacant-non-smoking-rooms}
+\subsubsection{Use Case --- Find Vacant non-smoking Rooms}\label{usecase2}
 
-\paragraph{Actors}\label{actors-1}
+\paragraph{Actors}
 
 \begin{itemize}
 \tightlist
@@ -200,7 +202,7 @@ Rooms}\label{find-vacant-non-smoking-rooms}
   Employee --- uses the system to gather information
 \end{itemize}
 
-\paragraph{Goals}\label{goals-1}
+\paragraph{Goals}
 
 \begin{itemize}
 \tightlist
@@ -208,7 +210,7 @@ Rooms}\label{find-vacant-non-smoking-rooms}
   Find rooms for non-smokers that are vacant at a certain date
 \end{itemize}
 
-\paragraph{Preconditions}\label{preconditions-1}
+\paragraph{Preconditions}
 
 \begin{itemize}
 \tightlist
@@ -220,20 +222,20 @@ Rooms}\label{find-vacant-non-smoking-rooms}
   The employee is authorized to access information on room availability
 \end{itemize}
 
-\paragraph{Summary}\label{summary-1}
+\paragraph{Summary}
 
 Demonstrates room queries with a conditional.
 
-\paragraph{Related}\label{related-1}
+\paragraph{Related}
 This use case is extracted from Scenario~\ref{scenario1}.
 It is also related to Usecase~\ref{usecase1}.
 
-\paragraph{Entry Conditions}\label{entry-conditions-1}
+\paragraph{Entry Conditions}
 
 The employee wants to find rooms for non-smokers that are vacant at a
 certain date.
 
-\paragraph{Steps}\label{steps-1}
+\paragraph{Steps}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -248,14 +250,14 @@ certain date.
   Proceed to the results listing
 \end{enumerate}
 
-\paragraph{Exit Condition}\label{exit-condition-1}
+\paragraph{Exit Condition}
 
 The employee has gathered information on whether there are vacant
 non-smoking rooms at a given date.
 
-\subsubsection{Reserve a Specific Room}\label{reserve-a-specific-room}
+\subsubsection{Use Case --- Reserve a Specific Room}\label{usecase3}
 
-\paragraph{Actors}\label{actors-2}
+\paragraph{Actors}
 
 \begin{itemize}
 \tightlist
@@ -265,7 +267,7 @@ non-smoking rooms at a given date.
   Customer --- wants to reserve a specific room
 \end{itemize}
 
-\paragraph{Goals}\label{goals-2}
+\paragraph{Goals}
 
 \begin{itemize}
 \tightlist
@@ -273,7 +275,7 @@ non-smoking rooms at a given date.
   Make a reservation of a specific room
 \end{itemize}
 
-\paragraph{Preconditions}\label{preconditions-2}
+\paragraph{Preconditions}
 
 \begin{itemize}
 \tightlist
@@ -283,16 +285,16 @@ non-smoking rooms at a given date.
   The manager can make reservations of specific rooms
 \end{itemize}
 
-\paragraph{Summary}\label{summary-2}
+\paragraph{Summary}
 
 Involves a special kind of interaction \emph{that might require elevated
 privileges}.
 
-\paragraph{Entry Conditions}\label{entry-conditions-2}
+\paragraph{Entry Conditions}
 
 The manager wants to meet a less frequent, specific request.
 
-\paragraph{Steps}\label{steps-2}
+\paragraph{Steps}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -324,7 +326,7 @@ The manager wants to meet a less frequent, specific request.
   \end{itemize}
 \end{enumerate}
 
-\paragraph{Exit Condition}\label{exit-condition-2}
+\paragraph{Exit Condition}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -340,6 +342,23 @@ The manager wants to meet a less frequent, specific request.
 
 
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\linewidth]{include/usecase1.eps}
+  \caption{UML Use Case Diagram for Use Case 1 -- Get information on room}
+  \label{fig:uml-usecase1}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\linewidth]{include/usecase2.eps}
+  \caption{UML Use Case Diagram for Use Case 2 -- Get information on room and make a reservation}
+  \label{fig:uml-usecase2}
+\end{figure}
+
+
+The UML use case diagram for Usecase~\ref{usecase1} and Usecase~\ref{usecase2} is shown in Figure~\ref{fig:uml-usecase1}.
+The UML use case diagram for Usecase~\ref{usecase3} is shown in Figure~\ref{fig:uml-usecase2}.
 
 
 \subsection{Use Case Analysis}
