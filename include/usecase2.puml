@@ -1,0 +1,46 @@
+' ______________________________________________________________________________
+'
+'   2DV603 Software Engineering
+'   Assignment 1 --- Requirements Engineering
+'
+'   Author:  Jonas Sjöberg
+'            Linnaeus University
+'            js224eh@student.lnu.se
+'            github.com/jonasjberg
+'            www.jonasjberg.com
+'
+'  License:  Creative Commons Attribution 4.0 International (CC BY 4.0)
+'            <http://creativecommons.org/licenses/by/4.0/legalcode>
+'            See LICENSE.md for additional licensing information.
+' ______________________________________________________________________________
+
+
+
+@startuml
+' debug flag creates a 'svek.dot' and 'svek.svg' file in ~/
+!pragma svek_trace on
+
+skinparam {
+    monochrome true
+    backgroundColor transparent
+    classBackgroundColor transparent
+    style strictuml
+}
+
+
+header
+2DV603 - Assignment 1
+Jonas Sjöberg <""js224eh@student.lnu.se"">
+end header
+
+
+
+'(Enter search queries) as searchquery
+'(View room information) as viewroominfo
+
+:Customer:
+Manager -- (Enter search queries)
+Manager - (View room information)
+Manager -- (Update room information)
+
+@enduml
