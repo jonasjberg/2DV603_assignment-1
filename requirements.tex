@@ -29,16 +29,91 @@ Task description from the assignment instructions
 \end{quote}
 
 
-\subsection{Existing Front-desk Systems}
-%
-% TODO: Take a look at existing systems..
-%
-
-
 \subsection{Scenarios}
 %
 % TODO: Write scenarios..
 %
+\subsubsection{Potential guest inquires about future patronage}{
+%
+% clerk asks about:
+%     * stay which nights?
+%     * which type of room do they want?
+%
+% System must:
+%
+%   * verify if room(s) are available on those nights before allowing a reservation to be made
+%   * verification procedure must take less than 2 seconds to complete.
+%   * allow requests for specific rooms, controlled by the manage
+%
+\begin{itemize}\label{scenario1}
+  \item A travelling salesman needs somewhere to stay for one night a couple of
+    weeks from now.  This person contacts the hotel by phone to inquire about
+    vacancy over a couple of days.  
+    
+  \item The hotel personnel answers any questions and uses the management
+    system to find out if any rooms are available in the requested time frame.
+    The hotel employee relays information about which rooms are available.
+
+  \item After hearing about the rooms, the salesman asks about room sizes.
+
+  \item The employee looks up relevant characteristics and attributes and
+    relays the information.
+
+  \item After brief contemplation, the salesman decides to make a reservation
+    for one of the vacant rooms. 
+\begin{end}
+
+\subsubsection{Guest checks in at the hotel}{
+% 
+% * guest checks in
+% 
+%     * room is allocated until checkout
+%     * must take in average less than 60 seconds to complete
+% 
+\begin{itemize}\label{scenario1}
+  \item A travelling salesman arrives at the hotel after having sold nothing and has no patience for delays and pleasantries.
+    He walks up to the hotel front desk and declares that he has made a reservation in advance and would like to check  in.
+    
+  \item The receptionist scrambles to find which room number the guest
+    ostensibly has reserved. The receptionist asks the salesman for personal information used when making the reservation.
+
+  \item The salesman provides personal information, such as name, for the receptionist who enters
+    this into the management system.
+    After narrowing down the search results to a single number, the
+    receptionist can retrieve the room key and proceed to guide the guest to
+    his room.
+
+    system to find out if any rooms are available in the requested time frame.
+    The hotel employee relays information about which rooms are available.
+
+  \item After hearing about the rooms, the salesman asks about room sizes.
+
+  \item The employee looks up relevant characteristics and attributes and
+    relays the information.
+
+  \item After brief contemplation, the salesman decides to make a reservation
+    for one of the vacant rooms. 
+\begin{end}
+
+
+
+* overall guests
+
+  system must:
+    * record basic information about each guest, 
+        * name, address, telephone number, credit card, passport number
+    * keep track of the guests account
+    * print guests bill.
+
+* guest wishes to cancel a reservation:
+
+    * reservation can be canceled at any time but a percentage of the room
+      price may be charged if the cancelation is done too late
+
+* guest checks in
+
+    * room is allocated until checkout
+    * must take in average less than 60 seconds to complete
 
 
 \subsection{Use Cases}
