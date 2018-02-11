@@ -344,14 +344,14 @@ The manager wants to meet a less frequent, specific request.
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=\linewidth]{include/usecase1.eps}
+  \includegraphics[width=0.8\linewidth]{include/usecase1.eps}
   \caption{UML Use Case Diagram for Use Case 1 -- Get information on room}
   \label{fig:uml-usecase1}
 \end{figure}
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=\linewidth]{include/usecase2.eps}
+  \includegraphics[width=0.8\linewidth]{include/usecase2.eps}
   \caption{UML Use Case Diagram for Use Case 2 -- Get information on room and make a reservation}
   \label{fig:uml-usecase2}
 \end{figure}
@@ -365,9 +365,42 @@ The UML use case diagram for Usecase~\ref{usecase3} is shown in Figure~\ref{fig:
 %
 % TODO: Perform use case analysis to determine who the actors are and what tasks they must perform..
 %
+The use cases indicate that all tasks either retrieve data on
+rooms/reservations, modify data on rooms/revervations or both.
+
+There is also a need for different ``priveleges'' as indicated by the somewhat
+unclear description in the instructions that seems to indicate that the manager
+should have extra control over the system.
+
 
 
 \subsection{Refined Problem Statement}
 %
 % TODO: Narrow the problem statement, excluding features that will not be needed in the first release ..
 %
+The core problem is designing a ``suitable'' storage system for the relevant
+data. This system should provide some means of retrieving data, as well as
+retrieving data that matches some given conditional statements.
+
+Then we want to wrap this storage backend with user interfaces that give all
+actors a controlled means of interacting with the data.
+This might be a web portal or a desktop application.
+
+
+So, we need a SQL database at the very bottom. Then a thin layer of domain
+logic that abstracts the persistence layer. A classic Model View Controller
+architecture could be used to allow different Views as well as clearly defined
+boundaries between sub-systems.
+
+\subsection{Features in the First Release}
+
+The first release should aim to provide a robust storage backend and some
+prototypal user interface. Very early versions probably focus on the functional
+core and might use a mock database and view, so that these can easily be
+replaced later.
+
+First release should focus on basic ``CRUD'' functionality with restrictions
+and domain rules designed from the requirements.
+
+I would not think it productive to focus on user interfaces and usability
+before a central core has been implemented.
