@@ -40,7 +40,8 @@ command -v latexmk >/dev/null || exit 1
   pandoc -f markdown -t latex -o domain_summary.md.tex domain_summary.md
   pandoc -f markdown -t latex -o use_cases.md.tex use_cases.md
 
-  # Always run at least twice for good measure
+  # Always run at least three times for good measure
+  latexmk main.tex -outdir=build -pdf -pdflatex='pdflatex -synctex=1 -interaction=nonstopmode -shell-escape'
   latexmk main.tex -outdir=build -pdf -pdflatex='pdflatex -synctex=1 -interaction=nonstopmode -shell-escape'
   latexmk main.tex -outdir=build -pdf -pdflatex='pdflatex -synctex=1 -interaction=nonstopmode -shell-escape'
 

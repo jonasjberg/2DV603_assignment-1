@@ -15,7 +15,7 @@
 % ______________________________________________________________________________
 
 
-\section{Domain Analysis Document}
+\section{Requirements Document}
 % Task description from the assignment instructions
 % \cite{2dv603:assignment1-instructions}:
 % 
@@ -60,7 +60,7 @@ These three scenarios are derived from the assignment instructions. \cite{2dv603
 
   \item After brief contemplation, the salesman decides to make a reservation
     for one of the vacant rooms. 
-\begin{end}
+\end{itemize}
 
 
 \subsubsection{Guest checks in at the hotel}\label{scenario2}
@@ -86,7 +86,7 @@ These three scenarios are derived from the assignment instructions. \cite{2dv603
 
   \item The salesman is provided with his room key and instructions on where
       the room is located.
-\begin{end}
+\end{itemize}
 
 
 \subsubsection{Guest cancels a reservation}\label{scenario3}
@@ -112,7 +112,7 @@ These three scenarios are derived from the assignment instructions. \cite{2dv603
       
   \item Gibson sighs in cat and clicks the ``I Agree'' link, which leads to a
       confirmation page with a summary of upayments that will be billed.
-\begin{end}
+\end{itemize}
 
 
 
@@ -122,8 +122,222 @@ These three scenarios are derived from the assignment instructions. \cite{2dv603
 %
 % TODO: Derive uses cases..
 %
+%%% USECASES_START %%%
 
-\subsubsection{Query for Vacant Rooms}\label{usecase1}
+\subsubsection{Find Vacant Rooms}\label{find-vacant-rooms}
+
+\paragraph{Actors}\label{actors}
+
+\begin{itemize}
+\tightlist
+\item
+  Employee --- uses the system to gather information
+\item
+  Customer --- inquires about vacant rooms at a specific date
+\end{itemize}
+
+\paragraph{Goals}\label{goals}
+
+\begin{itemize}
+\tightlist
+\item
+  Find rooms that are vacant at a certain date
+\item
+  Respond to the customers inquiry
+\end{itemize}
+
+\paragraph{Preconditions}\label{preconditions}
+
+\begin{itemize}
+\tightlist
+\item
+  The system is ``live'' and reflects the actual state of the world
+\item
+  The employee is authorized to access information on room availability
+\end{itemize}
+
+\paragraph{Summary}\label{summary}
+
+Demonstrates real-time use of the system to answer questions during
+interaction with a customer.
+
+\paragraph{Related}\label{related}
+This use case is extracted from Scenario~\ref{scenario1}.
+
+\paragraph{Entry Conditions}\label{entry-conditions}
+
+The employee wants to get information to provide to a customer during an
+interaction.
+
+\paragraph{Steps}\label{steps}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Navigate to the room-search functionality
+\item
+  Enter the date of interest
+\item
+  Proceed to the results listing
+\item
+  Repeat steps 2--3 until all customer inquiries are resolved
+\end{enumerate}
+
+\paragraph{Exit Condition}\label{exit-condition}
+
+The employee can answer the customers requests through information
+provided by the system.
+
+\subsubsection{Find Vacant non-smoking
+Rooms}\label{find-vacant-non-smoking-rooms}
+
+\paragraph{Actors}\label{actors-1}
+
+\begin{itemize}
+\tightlist
+\item
+  Employee --- uses the system to gather information
+\end{itemize}
+
+\paragraph{Goals}\label{goals-1}
+
+\begin{itemize}
+\tightlist
+\item
+  Find rooms for non-smokers that are vacant at a certain date
+\end{itemize}
+
+\paragraph{Preconditions}\label{preconditions-1}
+
+\begin{itemize}
+\tightlist
+\item
+  The system is ``live'' and reflects the actual state of the world
+\item
+  At least one room is marked as a ``non-smoking'' room
+\item
+  The employee is authorized to access information on room availability
+\end{itemize}
+
+\paragraph{Summary}\label{summary-1}
+
+Demonstrates room queries with a conditional.
+
+\paragraph{Related}\label{related-1}
+This use case is extracted from Scenario~\ref{scenario1}.
+It is also related to Usecase~\ref{usecase1}.
+
+\paragraph{Entry Conditions}\label{entry-conditions-1}
+
+The employee wants to find rooms for non-smokers that are vacant at a
+certain date.
+
+\paragraph{Steps}\label{steps-1}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Navigate to the room-search functionality
+\item
+  Enter the date of interest
+\item
+  Enable filtering non-smoking rooms
+\item
+  Proceed to the results listing
+\end{enumerate}
+
+\paragraph{Exit Condition}\label{exit-condition-1}
+
+The employee has gathered information on whether there are vacant
+non-smoking rooms at a given date.
+
+\subsubsection{Reserve a Specific Room}\label{reserve-a-specific-room}
+
+\paragraph{Actors}\label{actors-2}
+
+\begin{itemize}
+\tightlist
+\item
+  Manager --- uses the system to reserve a room
+\item
+  Customer --- wants to reserve a specific room
+\end{itemize}
+
+\paragraph{Goals}\label{goals-2}
+
+\begin{itemize}
+\tightlist
+\item
+  Make a reservation of a specific room
+\end{itemize}
+
+\paragraph{Preconditions}\label{preconditions-2}
+
+\begin{itemize}
+\tightlist
+\item
+  The system is ``live'' and reflects the actual state of the world
+\item
+  The manager can make reservations of specific rooms
+\end{itemize}
+
+\paragraph{Summary}\label{summary-2}
+
+Involves a special kind of interaction \emph{that might require elevated
+privileges}.
+
+\paragraph{Entry Conditions}\label{entry-conditions-2}
+
+The manager wants to meet a less frequent, specific request.
+
+\paragraph{Steps}\label{steps-2}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Navigate to the room-search functionality
+\item
+  Enter the room number of the requested room
+\item
+  See if it is currently vacant
+\item
+  If not:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Reserve the room
+  \end{itemize}
+\item
+  If it is:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Attempt to exploit elevated privileges to invalidate the current
+    vacancy
+  \item
+    Reserve the room
+  \end{itemize}
+\end{enumerate}
+
+\paragraph{Exit Condition}\label{exit-condition-2}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  The requested room is either already reserved and the manager can not
+  meet the customer request.
+\item
+  The requested room is reserved.
+\end{enumerate}
+
+%%% USECASES_END %%%
+
 
 
 
